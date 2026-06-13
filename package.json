@@ -1,15 +1,15 @@
 {
   "name": "layla-server",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "main": "dist/main.js",
   "author": "Layla Network Pty Ltd",
-  "description": "Layla server powered by LocalAI, proxying WebRTC to OpenAI specs.",
+  "description": "Layla P2P server powered by KoboldCPP orchestration.",
   "scripts": {
-    "setup": "node scripts/setup-env.js",
+    "fetch-binaries": "node scripts/download-binaries.js",
     "build": "tsc && esbuild src/renderer.tsx --bundle --outfile=public/renderer.js --platform=browser",
     "start": "npm run build && electron .",
-    "make:installer": "npm run build && electron-forge make --targets @electron-forge/maker-squirrel",
-    "make:portable": "npm run build && electron-forge make --targets @electron-forge/maker-zip"
+    "package:cuda": "npm run build && node -e \"process.env.BUILD_FLAVOR='cuda'\" && electron-forge make --targets @electron-forge/maker-squirrel",
+    "package:oldpc": "npm run build && node -e \"process.env.BUILD_FLAVOR='oldpc'\" && electron-forge make --targets @electron-forge/maker-squirrel"
   },
   "devDependencies": {
     "@electron-forge/cli": "^7.11.1",
@@ -23,8 +23,6 @@
     "typescript": "^5.4.0"
   },
   "dependencies": {
-    "axios": "^1.6.8",
-    "js-yaml": "^4.1.0",
     "qrcode": "^1.5.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
