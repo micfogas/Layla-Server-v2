@@ -1,5 +1,8 @@
 # Layla-Server V2
 
+- Original credit goes to [@l3utterfly](https://github.com/l3utterfly) for https://github.com/l3utterfly/Layla-Server
+- This is an update /replacement /alternate to the original. https://layla-network.ai/
+
 **Layla-Server V2** is a lightweight, secure, peer-to-peer (P2P) proxy application built on Electron and TypeScript. It bridges remote clients (specifically the Layla AI mobile application) with a locally hosted inference engine. By utilizing WebRTC Data Channels and a remote signaling server, Layla-Server bypasses traditional NAT routing and port-forwarding requirements, allowing secure remote access to local LLM hardware from anywhere.
 
 In Version 2, the underlying inference engine has been migrated from `llama.cpp` (`llama-server.exe`) to **LocalAI**. This strategic shift preserves hardware agnosticism (gracefully falling back to CPU execution if CUDA/ROCm is unavailable) while introducing strict adherence to the OpenAI API specification and unlocking dynamic VRAM model management.
