@@ -1,0 +1,44 @@
+#logs
+logs
+*.log
+
+#reports
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+#runfiles
+pids
+*.pid
+*.seed
+*.lock
+
+# libcov
+lib-cov
+coverage
+*.lcov
+
+# builds
+build/Release
+dist/
+*.exe
+
+# modules
+node_modules/
+jspm_packages/
+web_modules/
+
+# npm
+.npm
+
+# env
+.env
+.env.*
+
+# misc
+out
+.next
+.cache
+.temp
+.cache/
+
+# yarn
+.yarn/*
